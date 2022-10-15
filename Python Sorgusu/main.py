@@ -1,9 +1,14 @@
 import requests
 
-URL = "https://x-math.herokuapp.com/api/random?max=750&min=150"
+URL = "https://x-math.herokuapp.com/api/random"
 
-result = requests.get(URL)
+param = {
+    "max" : "100",
+    "min" : "5"
+}
+
+result = requests.get(URL, params=param)
 
 data = result.json()
 
-print(data)
+print("\n",data,"\n")
